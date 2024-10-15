@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>倒计时</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    #countdown {
+      font-size: 24px;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="countdown"></div>
+  <script>
+    // 定义目标时间，这里设置为4天后的时间（以毫秒为单位）
+    const targetTime = Date.now() + 4 * 24 * 60 * 60 * 1000;
+
+    function countdown() {
+      const now = Date.now();
+      const diff = targetTime - now;
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = '倒计时结束！';
+        // 这里可以添加烟花效果的代码，需要使用更复杂的前端技术或者引用相关的库
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      document.getElementById('countdown').innerHTML = `倒计时：${days}天 ${hours}:${minutes}:${seconds}`;
+      setTimeout(countdown, 1000);
+    }
+
+    countdown();
+  </script>
+</body>
+
+</html>
