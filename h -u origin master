@@ -1,0 +1,78 @@
+[33mcommit 981b8157437df16111c3b6db7e0c0c36cbf9ac4c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: 拂面 <1935953713@qq.com>
+Date:   Tue Oct 15 09:36:03 2024 +0800
+
+    代码
+
+[33mcommit 9df6cffe2c0c40ba581bb1d3799c42aadc7e7f9b[m
+Author: 拂面 <1935953713@qq.com>
+Date:   Tue Oct 15 09:13:25 2024 +0800
+
+    new
+
+[33mcommit d4bc75396ca7517c46cdaf8b7b4a5f9be6e1547f[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: 拂面 <1935953713@qq.com>
+Date:   Wed Sep 25 15:36:58 2024 +0800
+
+    Add python1 file
+
+[33mcommit 65b901bb42544193e5940c5a9c93fa87198a1e35[m
+Author: 拂面 <1935953713@qq.com>
+Date:   Wed Sep 25 07:30:05 2024 +0000
+
+    删除文件 README.md
+
+[33mcommit 85ca242d4a0495df41e6ce1545e6770353c9613c[m
+Author: 拂面 <1935953713@qq.com>
+Date:   Wed Sep 25 07:29:53 2024 +0000
+
+    删除文件 加油
+
+[33mcommit 43a1dbed62521307bcf98ef04c467466888ed1c2[m
+Author: 拂面 <1935953713@qq.com>
+Date:   Wed Sep 25 07:29:46 2024 +0000
+
+    删除文件 rk1/t1/a1
+
+[33mcommit 3b1a42a4869d26b20f8ba19cd6a541f9853408bb[m
+Author: 拂面 <1935953713@qq.com>
+Date:   Wed Sep 25 07:29:41 2024 +0000
+
+    删除文件 rk/rk10
+
+[33mcommit c0aa6b72f48201bb642add822b53aa224e4e478a[m
+Author: 拂面 <1935953713@qq.com>
+Date:   Wed Sep 25 07:27:54 2024 +0000
+
+    删除文件 README.en.md
+
+[33mcommit c9e9ae7c82984b8d3896c42d18e3e6bbd05bb041[m
+Merge: 0534089 ebaa209
+Author: 拂面 <1935953713@qq.com>
+Date:   Wed Sep 25 15:24:56 2024 +0800
+
+    Merge branch 'master' of gitee.com:stroke-the-face/python
+
+[33mcommit 0534089269c5de8739f1b75c0d4c93df799498b8[m
+Author: 拂面 <1935953713@qq.com>
+Date:   Wed Sep 25 15:21:28 2024 +0800
+
+    Add a1.ipynb file
+
+[33mcommit ddc164bf3908f77cbe0c4b9714d05518f9816b7b[m
+Author: 拂面 <1935953713@qq.com>
+Date:   Wed Sep 25 15:11:03 2024 +0800
+
+    new
+
+[33mcommit 68f938d01be0a5de7d59ae5c3941f83a042b0795[m
+Author: 拂面 <1935953713@qq.com>
+Date:   Wed Sep 25 15:10:33 2024 +0800
+
+    new
+
+[33mcommit ebaa209d6c65373e87cf062061559a91cf87af7f[m
+Author: 拂面 <1935953713@qq.com>
+Date:   Wed Sep 25 07:01:56 2024 +0000
+
+    Initial commit
