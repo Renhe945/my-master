@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5bc9401f-d20f-4f23-b5e5-818baa5e278c" name="更改" comment="new">
+      <change afterPath="$PROJECT_DIR$/kh.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lx.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a1/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/lx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a1/a1.ipynb" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+        <option value="Jupyter Notebook" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="notebook://C:/Users/123/AppData/Local/Temp/d52c3fab-5be2-44e7-92cc-fb2e654c93d2_月考算法答案.zip.3d2/月考算法答案/yklx2/yklx2.ipynb" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2lumDIsfpEmy5yj9eIuJTl4uxAU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.a1 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.a1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.a2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.a3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.aa.executor&quot;: &quot;Run&quot;,
+    &quot;Python.c1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.demo1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.lx.executor&quot;: &quot;Run&quot;,
+    &quot;Python.yk1.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/python代码&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql_aurora_aws&quot;,
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="python代码" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="python代码" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\python代码\lx-yk\data-yk\yk6" />
+      <recent name="E:\python代码\lx-yk\data-yk\yk5" />
+      <recent name="E:\python代码\lx-yk\data-yk\yk3" />
+      <recent name="E:\python代码\lx-yk\data-yk\yk1" />
+      <recent name="E:\python代码\lx-yk\data-yk\yk2" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\python代码\a1" />
+      <recent name="E:\python代码\aa" />
+      <recent name="E:\python代码\lx-yk\data-yk\yk1" />
+      <recent name="E:\python代码\lxrk" />
+      <recent name="E:\python代码\lx-yk\data-yk\yk6" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <myKeys>
+      <visibility group="Grunt" flag="true" />
+      <visibility group="Gulp" flag="true" />
+      <visibility group="HTTP Requests" flag="true" />
+      <visibility group="HTTP 请求" flag="true" />
+      <visibility group="Node.js" flag="true" />
+      <visibility group="Recent projects" flag="true" />
+      <visibility group="Run Python file" flag="true" />
+      <visibility group="Run conda command" flag="true" />
+      <visibility group="Run configurations" flag="true" />
+      <visibility group="Run pip command" flag="true" />
+      <visibility group="npm" flag="true" />
+      <visibility group="yarn" flag="true" />
+      <visibility group="最近的项目" flag="true" />
+      <visibility group="运行 Python 文件" flag="true" />
+      <visibility group="运行 conda 命令" flag="true" />
+      <visibility group="运行 pip 命令" flag="true" />
+      <visibility group="运行配置" flag="true" />
+    </myKeys>
+  </component>
+  <component name="RunManager" selected="Python.lx">
+    <configuration name="a1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python代码" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lx-yk/data-yk/yk1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lx-yk/data-yk/yk1/a1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="a2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python代码" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lx-yk/data-yk/yk1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lx-yk/data-yk/yk1/a2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="demo1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python代码" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/AppData/Local/Temp" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/AppData/Local/Temp/demo1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="lx" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python代码" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lx.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="yk1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python代码" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lx-yk" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="E:\python代码\lx-yk\data-yk\yk1\yk1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.lx" />
+        <item itemvalue="Python.a1" />
+        <item itemvalue="Python.a2" />
+        <item itemvalue="Python.demo1" />
+        <item itemvalue="Python.yk1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.17011.127" />
+        <option value="bundled-python-sdk-48aec45f0201-7e9c3bbb6e34-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.17011.127" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="5bc9401f-d20f-4f23-b5e5-818baa5e278c" name="更改" comment="" />
+      <created>1726038215085</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726038215085</updated>
+      <workItem from="1726056572055" duration="884000" />
+      <workItem from="1726057641936" duration="54000" />
+      <workItem from="1726057860506" duration="957000" />
+      <workItem from="1726058850424" duration="230000" />
+      <workItem from="1726059834114" duration="32000" />
+      <workItem from="1726059897308" duration="90000" />
+      <workItem from="1726061700238" duration="4000" />
+      <workItem from="1726061798803" duration="902000" />
+      <workItem from="1726062714550" duration="718000" />
+      <workItem from="1726097712106" duration="1949000" />
+      <workItem from="1726139341487" duration="1387000" />
+      <workItem from="1726140742971" duration="6354000" />
+      <workItem from="1726185181393" duration="2648000" />
+      <workItem from="1726190920334" duration="11384000" />
+      <workItem from="1726219809694" duration="9025000" />
+      <workItem from="1726233835441" duration="2042000" />
+      <workItem from="1726278746842" duration="1970000" />
+      <workItem from="1726361726577" duration="4594000" />
+      <workItem from="1726572935707" duration="6883000" />
+      <workItem from="1726619346332" duration="638000" />
+      <workItem from="1726626594289" duration="264000" />
+      <workItem from="1726626864838" duration="122000" />
+      <workItem from="1726626994534" duration="148000" />
+      <workItem from="1726627185649" duration="4652000" />
+      <workItem from="1726639338319" duration="13129000" />
+      <workItem from="1726660989781" duration="8396000" />
+      <workItem from="1726702844312" duration="7000" />
+      <workItem from="1726706334619" duration="155000" />
+      <workItem from="1726792984284" duration="1999000" />
+      <workItem from="1726813165631" duration="1202000" />
+      <workItem from="1726878674626" duration="10600000" />
+      <workItem from="1727004159280" duration="6378000" />
+      <workItem from="1727141206042" duration="5093000" />
+      <workItem from="1727149983949" duration="435000" />
+      <workItem from="1727157732672" duration="5362000" />
+      <workItem from="1727164557316" duration="13921000" />
+      <workItem from="1727225071977" duration="3000" />
+      <workItem from="1727245843931" duration="17346000" />
+      <workItem from="1727315574833" duration="4155000" />
+      <workItem from="1727330463760" duration="13471000" />
+      <workItem from="1727350430266" duration="431000" />
+      <workItem from="1727351130967" duration="1720000" />
+      <workItem from="1727352876155" duration="1654000" />
+      <workItem from="1727354964568" duration="4403000" />
+      <workItem from="1727401252442" duration="28750000" />
+      <workItem from="1727488436303" duration="5239000" />
+      <workItem from="1727503220906" duration="996000" />
+      <workItem from="1727509142113" duration="698000" />
+      <workItem from="1727509860336" duration="14194000" />
+      <workItem from="1727566488125" duration="3000" />
+      <workItem from="1727570378241" duration="28000" />
+      <workItem from="1727589849169" duration="22162000" />
+      <workItem from="1727656307625" duration="1983000" />
+      <workItem from="1727927367416" duration="20758000" />
+      <workItem from="1728007102660" duration="8696000" />
+      <workItem from="1728021813012" duration="17708000" />
+      <workItem from="1728095717688" duration="9979000" />
+      <workItem from="1728109613284" duration="9432000" />
+      <workItem from="1728212721945" duration="1955000" />
+      <workItem from="1728264544240" duration="1209000" />
+      <workItem from="1728266768395" duration="3226000" />
+      <workItem from="1728279245967" duration="11821000" />
+      <workItem from="1728299260365" duration="5750000" />
+      <workItem from="1728347709052" duration="7000" />
+      <workItem from="1728357649907" duration="26981000" />
+      <workItem from="1728430982439" duration="26271000" />
+      <workItem from="1728469954061" duration="13273000" />
+      <workItem from="1728526976212" duration="5722000" />
+      <workItem from="1728538370221" duration="12802000" />
+      <workItem from="1728605667336" duration="1719000" />
+      <workItem from="1728952654179" duration="4067000" />
+      <workItem from="1728958417880" duration="213000" />
+      <workItem from="1728958649801" duration="20000" />
+      <workItem from="1728959233334" duration="3107000" />
+      <workItem from="1729423857189" duration="3000" />
+      <workItem from="1729501226148" duration="3000" />
+      <workItem from="1729508692438" duration="5000" />
+      <workItem from="1729649374101" duration="7000" />
+      <workItem from="1729649726461" duration="911000" />
+      <workItem from="1731486191998" duration="45000" />
+      <workItem from="1731486237988" duration="591000" />
+    </task>
+    <task id="LOCAL-00001" summary="new">
+      <option name="closed" value="true" />
+      <created>1727248234217</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727248234217</updated>
+    </task>
+    <task id="LOCAL-00002" summary="new">
+      <option name="closed" value="true" />
+      <created>1727248280712</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727248280712</updated>
+    </task>
+    <task id="LOCAL-00003" summary="new">
+      <option name="closed" value="true" />
+      <created>1728954806572</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1728954806572</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="new" />
+    <option name="LAST_COMMIT_MESSAGE" value="new" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lx-yk/data-yk/yk1/yk1.py</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://D:/Jupyter/Lib/site-packages/pandas/__init__.py</url>
+          <line>110</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>notebook://C:/Users/123/AppData/Local/Temp/714b79aa-2f20-4a28-bca0-a9ebcaaa248f_月考算法答案.zip.48f/月考算法答案/yklx2/yklx2.ipynb</url>
+          <line>51</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>notebook://C:/Users/123/AppData/Local/Temp/2a8332c6-1ab8-48ee-a6d3-4d6a251bd5e2_月考算法答案.zip.5e2/月考算法答案/yklx2/yklx2.ipynb</url>
+          <line>15</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/python$a1.coverage" NAME="a1 覆盖结果" MODIFIED="1727593868219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lx-yk/data-yk/yk1" />
+    <SUITE FILE_PATH="coverage/python$yk1.coverage" NAME="yk1 覆盖结果" MODIFIED="1727357831823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lx-yk" />
+    <SUITE FILE_PATH="coverage/python$a3.coverage" NAME="a3 覆盖结果" MODIFIED="1726101636470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python1" />
+    <SUITE FILE_PATH="coverage/python$demo1.coverage" NAME="demo1 覆盖结果" MODIFIED="1727426802245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Temp" />
+    <SUITE FILE_PATH="coverage/python$c1.coverage" NAME="c1 覆盖结果" MODIFIED="1726194757966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rk1/t1" />
+    <SUITE FILE_PATH="coverage/python$a1__1_.coverage" NAME="a1 (1) 覆盖结果" MODIFIED="1727353726273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lxrk" />
+    <SUITE FILE_PATH="coverage/python$aa.coverage" NAME="aa 覆盖结果" MODIFIED="1726185225543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rk1/t1" />
+    <SUITE FILE_PATH="coverage/python$a2.coverage" NAME="a2 覆盖结果" MODIFIED="1727592434525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lx-yk/data-yk/yk1" />
+    <SUITE FILE_PATH="coverage/python$lx.coverage" NAME="lx 覆盖结果" MODIFIED="1731486608761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
