@@ -81,7 +81,6 @@ public class DimApp {//extends BaseApp
             public void processElement(String s, ProcessFunction<String, JSONObject>.Context context, Collector<JSONObject> collector) throws Exception {
                 JSONObject json = JSON.parseObject(s);
 //                拆分数据
-
                 String db = json.getString("database");
                 String type = json.getString("type");
                 String data = json.getString("data");
@@ -90,7 +89,26 @@ public class DimApp {//extends BaseApp
                 }
             }
         });
-        json_objds.print();
+//        json_objds.print();
+//        使用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         env.execute();
     }
