@@ -11,23 +11,15 @@
 
     <artifactId>realtime-dim</artifactId>
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>com.atguigu</groupId>-->
-<!--            <artifactId>realtime-common</artifactId>-->
-<!--            <version>1.0-SNAPSHOT</version>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
         <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>realtime-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>provided</scope>
+            <groupId>com.ververica</groupId>
+            <artifactId>flink-connector-mysql-cdc</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>realtime-common</artifactId>
             <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

@@ -12,6 +12,7 @@
         <module>realtime-dim</module>
         <module>realtime-dws</module>
         <module>realtime-common</module>
+        <module>realtime-dwd</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

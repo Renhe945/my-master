@@ -1,14 +1,10 @@
 package com.atguigu.gmall.realtime.dim.app;
 
 
-import base.BaseApp;import constant.Constant;
-
+import base.BaseApp;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-
-
-//import lombok.extern.slf4j.Slf4j;
-
+import constant.Constant;
 import org.apache.flink.api.common.functions.FilterFunction;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
