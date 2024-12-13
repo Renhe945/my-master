@@ -4,7 +4,7 @@ public class Constant {
     public static final String KAFKA_BROKERS="hadoop102:9092,hadoop103:9092,hadoop104:9092";
     public static final String TOPIC_DB="topic_db";
     public static final String TOPIC_LOG="topic_log";
-    public static final String MYSQL_HOST="hadoop02";
+    public static final String MYSQL_HOST="hadoop102";
     public static final  int MYSQL_PORT=3306;
     public static final String MYSQL_USER_NAME = "root";
     public static final String MYSQL_PASSWORD = "123456";

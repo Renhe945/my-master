@@ -10,7 +10,7 @@ import org.apache.flink.connector.kafka.source.enumerator.initializer.OffsetsIni
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-
+//
 public class FlinkSourceUtil {
     public static KafkaSource<String> getKafkaSource(String groupId, String topic){
 
