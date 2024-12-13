@@ -1,4 +1,4 @@
-package constant;
+package com.atguigu.gamll.realtime.common.constant;
 
 public class Constant {
     public static final String KAFKA_BROKERS="hadoop102:9092,hadoop103:9092,hadoop104:9092";
@@ -20,11 +20,8 @@ public class Constant {
     public static final String TOPIC_DWD_TRADE_CART_ADD = "dwd_trade_cart_add";
     public static final String TOPIC_DWD_TRADE_ORDER_DETAIL = "dwd_trade_order_detail";
     public static final String TOPIC_DWD_TRADE_ORDER_CANCEL = "dwd_trade_order_cancel";
-
     public static final String TOPIC_DWD_TRADE_ORDER_PAYMENT_SUCCESS = "dwd_trade_order_payment_success";
     public static final String TOPIC_DWD_TRADE_ORDER_REFUND = "dwd_trade_order_refund";
-
     public static final String TOPIC_DWD_TRADE_REFUND_PAYMENT_SUCCESS = "dwd_trade_refund_payment_success";
-
     public static final String TOPIC_DWD_USER_REGISTER = "dwd_user_register";
 }

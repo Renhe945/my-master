@@ -1,6 +1,7 @@
-package util;
+package com.atguigu.gamll.realtime.common.util;
 
-import constant.Constant;
+import com.atguigu.gamll.realtime.common.constant.Constant;
+
 import org.apache.flink.api.common.serialization.DeserializationSchema;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.common.typeinfo.Types;
@@ -26,7 +27,6 @@ public class FlinkSourceUtil {
                         }
                         return null;
                     }
-
                     @Override
                     public boolean isEndOfStream(String nextElement) {
                         return false;

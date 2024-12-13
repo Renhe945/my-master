@@ -1,0 +1,38 @@
+数据倾斜 的理解：
+select * from date_east(不走map)
+select region,count(1) from date_east group by region---(走map)并且由于（两方的数据差别太大造成的）数据的倾斜执行时间很长
+执行结果
+华北 80000000
+华东 800000
+就比如一个地区的数量是80000000 一个是800000，这就是属于数据倾斜这会使一方执行完、一方还得等着等多的运行完在一起执行计算，那就会消耗很大的时间执行效率变的很低
+
+通过拼接随机数，目的是将其打散再计算将减少查询的时间进一步的优化hive，减少浪费时间
+with t1 as (
+    select userid,
+           order_no,
+           concat(region,'-',rand()) as region,--concat用来拼接 ，rand随机数
+           product_no,
+           color_no,
+           sale_amount,
+           ts
+    from date_east--将地区加随机数拼接
+),
+    t2 as (
+        select region,
+               count(1) as cnt
+        from t1
+        group by region--按照新的region（已经拼接了随机数）进行分组，并计算每组的数量
+    ),
+    t3 as (
+        select region,
+               substr(region,1,2) as re,--提取新region字段的前两位
+               cnt
+        from t2--按照re进行分组，并计算每组的数量
+    )
+select re,
+       count(1) as cnt
+from t3
+group by re;--再提取re最终的聚合操作，从而优化查询性能。
+
+
+

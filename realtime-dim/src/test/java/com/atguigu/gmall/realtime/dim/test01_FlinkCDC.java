@@ -2,12 +2,13 @@ package com.atguigu.gmall.realtime.dim;
 
 import com.ververica.cdc.connectors.mysql.source.MySqlSource;
 import com.ververica.cdc.connectors.mysql.table.StartupOptions;
+
 import com.ververica.cdc.debezium.JsonDebeziumDeserializationSchema;
 import com.ververica.cdc.debezium.StringDebeziumDeserializationSchema;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.source.SourceFunction;
-
+//import com.alibaba.ververica.cdc.connectors.mysql.MySQLSource;
 public class test01_FlinkCDC {
     public static void main(String[] args) throws Exception {
 //        准备环境
@@ -21,7 +22,7 @@ public class test01_FlinkCDC {
                 .tableList("gmall_config.table_process_dim")
                 .username("root")
                 .password("123456")
-                .startupOptions(StartupOptions.latest())
+//                .startupOptions(StartupOptions.latest())
                 .deserializer(new JsonDebeziumDeserializationSchema()) // converts SourceRecord to String
                 .build();
         env.enableCheckpointing(3000);
