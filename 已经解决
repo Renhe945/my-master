@@ -1,0 +1,9 @@
+flume的断点续传：
+在 Flume 中利用 offset 实现断点续传，可以采用Kafka作为Channel。当flume将数据发送到kafka如果突然挂掉如果包含 offset 就可以从上次 offset记录的地方 继续读取
+
+
+
+kafkaChannel是什么
+KafkaChannel 是一种数据通道，用于将数据从数据源传到kafka，
+并且在执行flume的时候在数据成功进入到kafkaChannel的缓存中就算出了问题，后续也会从这里恢复数据
+保证了数据的完整性和一致性
