@@ -5,6 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4643984c-165b-41b2-b281-13a6f2045c7d" name="更改" comment="init project">
+      <change afterPath="$PROJECT_DIR$/a1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/realtime-common/src/main/java/com/atguigu/gamll/realtime/common/constant/JsonDebeziumDeserializationUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/realtime-common/src/main/resources/log4j .properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/realtime-common/target/classes/com/atguigu/gamll/realtime/common/constant/Constant.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/realtime-common/target/classes/log4j .properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/realtime-dim/src/main/java/DimApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/realtime-dim/src/main/resources/log4j .properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/realtime-dim/src/test/java/com/atguigu/gmall/realtime/dim/test01_FlinkCDC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/realtime-dim/target/classes/DimApp$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/realtime-dim/target/classes/DimApp$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/realtime-dim/target/classes/DimApp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/realtime-dim/target/classes/log4j .properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j .properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
@@ -18,6 +31,17 @@
       <change beforePath="$PROJECT_DIR$/../gmall-2023-realtime/realtime-dim/src/main/java/com/atguigu/gmall/realtime/dim/function/HBaseSinkFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gmall-2023-realtime/realtime-dim/src/main/java/com/atguigu/gmall/realtime/dim/function/HBaseSinkFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gmall-2023-realtime1" beforeDir="false" afterPath="$PROJECT_DIR$/../gmall-2023-realtime1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gmall-2023-realtime3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-2023-realtime/realtime-dws/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-2023-realtime/realtime-dws/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/realtime-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/realtime-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/realtime-common/src/main/java/com/atguigu/gamll/realtime/common/base/BaseApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/realtime-common/src/main/java/com/atguigu/gamll/realtime/common/base/BaseApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/realtime-common/src/main/java/com/atguigu/gamll/realtime/common/constant/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/realtime-common/src/main/java/com/atguigu/gamll/realtime/common/constant/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/realtime-common/src/main/java/com/atguigu/gamll/realtime/common/util/FlinkSourceUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/realtime-common/src/main/java/com/atguigu/gamll/realtime/common/util/FlinkSourceUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/realtime-dim/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/realtime-dim/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/realtime-dwd/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/realtime-dwd/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/realtime-dwd/realtime-dwd-interaction-comment-info/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/realtime-dwd/realtime-dwd-interaction-comment-info/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/realtime-dws/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/realtime-dws/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../kh.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lx.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lx.py" beforeDir="false" />
@@ -33,7 +57,7 @@
     <option name="done" value="true" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -58,18 +82,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "E:/mygit/gmall-2023-realtime3_1",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.tabs"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/mygit/gmall-2023-realtime3_1&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -203,7 +227,8 @@
       <workItem from="1734259568402" duration="6000" />
       <workItem from="1734259646608" duration="2904000" />
       <workItem from="1734264066545" duration="2617000" />
-      <workItem from="1734267006575" duration="96000" />
+      <workItem from="1734267006575" duration="1085000" />
+      <workItem from="1734268196855" duration="236000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1734265858312</created>

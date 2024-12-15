@@ -11,7 +11,6 @@
     <modules>
         <module>realtime-common</module>
         <module>realtime-dim</module>
-
         <module>realtime-dws</module>
         <module>realtime-dwd</module>
         <module>gmall_api</module>
@@ -25,16 +24,15 @@
         <module>realtime-dwd/realtime-dwd-trade-order-refund</module>
         <module>realtime-dwd/realtime-dwd-trade-refund-pay-suc-detail</module>
     </modules>
-
     <properties>
         <java.version>1.8</java.version>
-        <maven.providedr.source>${java.version}</maven.providedr.source>
-        <maven.providedr.target>${java.version}</maven.providedr.target>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <flink.version>1.17.1</flink.version>
         <scala.version>2.12</scala.version>
         <hadoop.version>3.3.4</hadoop.version>
-        <flink-cdc.vesion>2.4.0</flink-cdc.vesion>
+        <flink-cdc.vesion>2.4.2</flink-cdc.vesion>
         <fastjson.version>1.2.83</fastjson.version>
         <hbase.version>2.4.11</hbase.version>
     </properties>
@@ -202,7 +200,7 @@
             <dependency>
                 <groupId>org.apache.doris</groupId>
                 <artifactId>flink-doris-connector-1.17</artifactId>
-                <version>1.4.0</version>
+                <version>1.5.2</version>
             </dependency>
 
             <dependency>
@@ -279,7 +277,5 @@
             </plugin>
         </plugins>
     </build>
-
-
 
 </project>
