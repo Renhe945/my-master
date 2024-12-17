@@ -1,7 +1,6 @@
-package com.bw.gmall.realtime.dws.app;
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+
 import com.bw.gmall.realtime.common.base.BaseApp;
 import com.bw.gmall.realtime.common.bean.CartAddUuBean;
 import com.bw.gmall.realtime.common.constant.Constant;
@@ -42,6 +41,7 @@ public class DwsTradeCartAddUuWindow extends BaseApp {
             )
             .keyBy(obj -> obj.getString("user_id"))
             .process(new KeyedProcessFunction<String, JSONObject, CartAddUuBean>() {
+
                 private ValueState<String> lastCartAddDateState;
 
                 @Override
@@ -88,10 +88,8 @@ public class DwsTradeCartAddUuWindow extends BaseApp {
                         out.collect(bean);
                     }
                 }
-            )
-            .map(new DorisMapFunction<>())
-            .sinkTo(FlinkSinkUtil.getDorisSink(Constant.DWS_TRADE_CART_ADD_UU_WINDOW));
-//                .print();
+            ).map(new DorisMapFunction<>()).sinkTo(FlinkSinkUtil.getDorisSink(Constant.DWS_TRADE_CART_ADD_UU_WINDOW));
+
 
     }
 }

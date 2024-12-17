@@ -28,10 +28,10 @@ public static final String MYSQL_DRIVER = "com.mysql.cj.jdbc.Driver";
     public static final String TOPIC_DWD_TRAFFIC_DISPLAY = "dwd_traffic_display";
     public static final String TOPIC_DWD_BASE_LOG = "dwd_base_log";
 
-    public static final String FENODES = "hadoop102:7030";
-    public static final String DORIS_DATABASE = "gmall_realtime";
-    public static final String DORIS_USERNAME = "root";
-    public static final String DORIS_PASSWORD = "root";
+    public static final String FENODES = "10.39.48.33:8030";
+    public static final String DORIS_DATABASE = "dev_fy_r";
+    public static final String DORIS_USERNAME = "admin";
+    public static final String DORIS_PASSWORD = "zh1028,./";
 
 
     public static final String TOPIC_DWD_INTERACTION_COMMENT_INFO = "dwd_interaction_comment_info";

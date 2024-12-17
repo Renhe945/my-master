@@ -27,11 +27,11 @@ public class RedisUtil {
 
         config.setMaxWaitMillis(10 * 1000);
 
-        pool = new JedisPool(config, "hadoop102", 6379);
+        pool = new JedisPool(config, "192.168.10.102", 6379);
     }
 
     public static Jedis getJedis() {
-        // Jedis jedis = new Jedis("hadoop102", 6379);
+        // Jedis jedis = new Jedis("192.168.10.102", 6379);
 
         Jedis jedis = pool.getResource();
         jedis.select(4); // 直接选择 4 号库
@@ -83,7 +83,7 @@ public class RedisUtil {
  * @return 异步链接对象
  */
 public static StatefulRedisConnection<String, String> getRedisAsyncConnection() {
-    RedisClient redisClient = RedisClient.create("redis://hadoop102:6379/2");
+    RedisClient redisClient = RedisClient.create("redis://192.168.10.102:6379/2");
     return redisClient.connect();
 }
 

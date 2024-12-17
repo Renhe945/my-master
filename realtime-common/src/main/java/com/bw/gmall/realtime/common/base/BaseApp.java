@@ -21,27 +21,6 @@ public abstract class BaseApp {
     public void start(String topicDb,String groupId,int p,int port)  {
         // 1. 设置Hadoop执行用户
         System.setProperty("HADOOP_USER_NAME", "root");
-//        // 2. 创建流环境
-//        Configuration configuration = new Configuration();
-//        configuration.setInteger("rest.port", port);
-//        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment(configuration);
-//        // 3.设置并行度
-//        env.setParallelism(p);
-//        // 4.设置CK
-//        env.setStateBackend(new HashMapStateBackend());
-////        env.enableCheckpointing(5000);
-//        env.enableCheckpointing(5000L, CheckpointingMode.EXACTLY_ONCE);
-//        env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
-//        env.getCheckpointConfig().setCheckpointStorage("hdfs://hadoop102:8020/ck"+groupId );
-//        env.getCheckpointConfig().setMaxConcurrentCheckpoints(1);
-//        env.getCheckpointConfig().setMinPauseBetweenCheckpoints(5000);
-//        env.getCheckpointConfig().setCheckpointTimeout(10000);
-//        env.getCheckpointConfig().setExternalizedCheckpointCleanup(RETAIN_ON_CANCELLATION);
-//        // 5.消费数据
-//        DataStreamSource<String> dataStreamSource = env.fromSource(FlinkSourceUtil.getKafkaSource(topicDb, groupId), WatermarkStrategy.noWatermarks(), "Kafka Source");
-//        // 6.打印数据
-////        dataStreamSource.print();
-//        handle(env,dataStreamSource);
         Configuration conf = new Configuration();
         conf.setInteger("rest.port",port);
         //1.1准备环境
@@ -67,9 +46,9 @@ public abstract class BaseApp {
 //    从kafka中获取主题 topic_db 主题中读取业务数据
 //        声明消费的主题和消费者组
 //        String topic="topic_db";
-        String groupID="dim_app_group";
+//        String groupID="dim_app_group";
         //创建消费者对象(优化后的）
-        KafkaSource<String> source = FlinkSourceUtil.getKafkaSource(Constant.TOPIC_DB, groupID);
+        KafkaSource<String> source = FlinkSourceUtil.getKafkaSource(topicDb, groupId);
         //将其封装为流
         DataStreamSource<String> kafkaSource = env.fromSource(source, WatermarkStrategy.noWatermarks(), "Kafka_Source");
 

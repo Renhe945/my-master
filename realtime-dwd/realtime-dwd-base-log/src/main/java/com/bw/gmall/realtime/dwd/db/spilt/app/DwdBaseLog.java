@@ -40,7 +40,7 @@ public class DwdBaseLog extends BaseApp {
         KeyedStream<JSONObject, String> keyedStream = getKeyedStream(etlStream);
 //        3.新老用户校验
         SingleOutputStreamOperator<JSONObject> isNewStream = fixlsNew(keyedStream);
-        isNewStream.print();
+//        isNewStream.print();
 //        4.分流
         OutputTag<String> startTag = new OutputTag<String>("start", TypeInformation.of(String.class));
         OutputTag<String> errorTag = new OutputTag<String>("err", TypeInformation.of(String.class));

@@ -2,12 +2,15 @@ package com.bw.gmall.realtime.common.util;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bw.gmall.realtime.common.bean.TableProcessDwd;
+
+
 import com.bw.gmall.realtime.common.constant.Constant;
 import org.apache.doris.flink.cfg.DorisExecutionOptions;
 import org.apache.doris.flink.cfg.DorisOptions;
 import org.apache.doris.flink.cfg.DorisReadOptions;
 import org.apache.doris.flink.sink.DorisSink;
-import org.apache.doris.flink.sink.writer.SimpleStringSerializer;
+
+import org.apache.doris.flink.sink.writer.serializer.SimpleStringSerializer;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.connector.base.DeliveryGuarantee;

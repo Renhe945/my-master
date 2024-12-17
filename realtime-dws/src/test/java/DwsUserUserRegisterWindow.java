@@ -1,4 +1,4 @@
-package com.bw.gmall.realtime.dws.app;
+
 
 import com.bw.gmall.realtime.common.base.BaseApp;
 import com.bw.gmall.realtime.common.bean.UserRegisterBean;
@@ -75,7 +75,7 @@ public class DwsUserUserRegisterWindow extends BaseApp {
                     }
             )
             .map(new DorisMapFunction<>())
-            .sinkTo(FlinkSinkUtil.getDorisSink(Constant.DWS_USER_USER_REGISTER_WINDOW));
-//           .print();
+           .sinkTo(FlinkSinkUtil.getDorisSink(Constant.DWS_USER_USER_REGISTER_WINDOW));
+
 }
 }

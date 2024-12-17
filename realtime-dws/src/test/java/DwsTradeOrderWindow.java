@@ -1,9 +1,8 @@
-package com.bw.gmall.realtime.dws.app;
-
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+
+
 import com.bw.gmall.realtime.common.base.BaseApp;
-import com.bw.gmall.realtime.common.bean.CartAddUuBean;
+import com.bw.gmall.realtime.common.bean.TradeOrderBean;
 import com.bw.gmall.realtime.common.constant.Constant;
 import com.bw.gmall.realtime.common.function.DorisMapFunction;
 import com.bw.gmall.realtime.common.util.DateFormatUtil;
@@ -22,76 +21,86 @@ import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
 import org.apache.flink.util.Collector;
 
-
 import java.time.Duration;
 
-public class DwsTradeCartAddUuWindow extends BaseApp {
+public class DwsTradeOrderWindow extends BaseApp {
     public static void main(String[] args) {
-        new DwsTradeCartAddUuWindow().start(Constant.TOPIC_DWD_TRADE_CART_ADD,"1",1,10026);
+        new DwsTradeOrderWindow().start(Constant.TOPIC_DWD_TRADE_ORDER_DETAIL,"1",1,10027);
     }
-    @Override
+  @Override
     public void handle(StreamExecutionEnvironment env, DataStreamSource<String> stream) {
         stream
-            .map(JSON::parseObject)
+            .map(JSONObject::parseObject)
             .assignTimestampsAndWatermarks(
                 WatermarkStrategy
                     .<JSONObject>forBoundedOutOfOrderness(Duration.ofSeconds(5L))
                     .withTimestampAssigner((obj, ts) -> obj.getLong("ts") * 1000)
                     .withIdleness(Duration.ofSeconds(120L))
-
             )
             .keyBy(obj -> obj.getString("user_id"))
-            .process(new KeyedProcessFunction<String, JSONObject, CartAddUuBean>() {
-                private ValueState<String> lastCartAddDateState;
+            .process(new KeyedProcessFunction<String, JSONObject, TradeOrderBean>() {
+
+                private ValueState<String> lastOrderDateState;
 
                 @Override
                 public void open(Configuration parameters) {
-                    lastCartAddDateState = getRuntimeContext().getState(new ValueStateDescriptor<String>("lastCartAddDate", String.class));
+                    lastOrderDateState = getRuntimeContext().getState(new ValueStateDescriptor<String>("lastOrderDate", String.class));
                 }
 
                 @Override
-                public void processElement(JSONObject jsonObj,
-                                           Context context,
-                                           Collector<CartAddUuBean> out) throws Exception {
-                    String lastCartAddDate = lastCartAddDateState.value();
-                    long ts = jsonObj.getLong("ts") * 1000;
+                public void processElement(JSONObject value,
+                                           Context ctx,
+                                           Collector<TradeOrderBean> out) throws Exception {
+                    long ts = value.getLong("ts") * 1000;
+
                     String today = DateFormatUtil.tsToDate(ts);
+                    String lastOrderDate = lastOrderDateState.value();
 
-                    if (!today.equals(lastCartAddDate)) {
-                        lastCartAddDateState.update(today);
+                    long orderUu = 0L;
+                    long orderNew = 0L;
+                    if (!today.equals(lastOrderDate)) {
+                        orderUu = 1L;
+                        lastOrderDateState.update(today);
 
-                        out.collect(new CartAddUuBean("", "", "", 1L));
+                        if (lastOrderDate == null) {
+                            orderNew = 1L;
+                        }
+
                     }
-
+                    if (orderUu == 1) {
+                        out.collect(new TradeOrderBean("", "", "", orderUu, orderNew, ts));
+                    }
                 }
             })
             .windowAll(TumblingEventTimeWindows.of(Time.seconds(5L)))
             .reduce(
-                new ReduceFunction<CartAddUuBean>() {
+                new ReduceFunction<TradeOrderBean>() {
                     @Override
-                    public CartAddUuBean reduce(CartAddUuBean value1,
-                                                CartAddUuBean value2) {
-                        value1.setCartAddUuCt(value1.getCartAddUuCt() + value2.getCartAddUuCt());
+
+                    public TradeOrderBean reduce(TradeOrderBean value1,
+                                                 TradeOrderBean value2) {
+                        value1.setOrderUniqueUserCount(value1.getOrderUniqueUserCount() + value2.getOrderUniqueUserCount());
+                        value1.setOrderNewUserCount(value1.getOrderNewUserCount() + value2.getOrderNewUserCount());
                         return value1;
                     }
                 },
-                new ProcessAllWindowFunction<CartAddUuBean, CartAddUuBean, TimeWindow>() {
+                new ProcessAllWindowFunction<TradeOrderBean, TradeOrderBean, TimeWindow>() {
                     @Override
                     public void process(Context ctx,
-                                        Iterable<CartAddUuBean> elements,
-                                        Collector<CartAddUuBean> out) throws Exception {
-                        CartAddUuBean bean = elements.iterator().next();
+                                        Iterable<TradeOrderBean> elements,
+                                        Collector<TradeOrderBean> out) throws Exception {
+                        TradeOrderBean bean = elements.iterator().next();
+
                         bean.setStt(DateFormatUtil.tsToDateTime(ctx.window().getStart()));
                         bean.setEdt(DateFormatUtil.tsToDateTime(ctx.window().getEnd()));
+
                         bean.setCurDate(DateFormatUtil.tsToDateForPartition(System.currentTimeMillis()));
 
                         out.collect(bean);
                     }
                 }
-            )
-            .map(new DorisMapFunction<>())
-            .sinkTo(FlinkSinkUtil.getDorisSink(Constant.DWS_TRADE_CART_ADD_UU_WINDOW));
-//                .print();
+            )     .map(new DorisMapFunction<>()).sinkTo(FlinkSinkUtil.getDorisSink(Constant.DWS_TRADE_SKU_ORDER_WINDOW));
+
 
     }
 }
