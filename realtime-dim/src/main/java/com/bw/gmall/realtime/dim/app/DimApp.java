@@ -49,11 +49,13 @@ public class DimApp extends BaseApp {
         //  1.ETL清洗主流数据
         SingleOutputStreamOperator<JSONObject> etlStream = etl(dataStreamSource);
         // 2.通过CDC读取配置表,并行度只能是1
+       //使用FlinkCDC读取配置表中的配置信息
+        //创建mysqlsource对象
         DataStreamSource<String> processStream = env.fromSource(FlinkSourceUtil.getMysqlSource(Constant.PROCESS_DATABASE, Constant.PROCESS_DIM_TABLE_NAME), WatermarkStrategy.noWatermarks(), "cdc_stream").setParallelism(1);
         processStream.print("配置表");
         // 3.在Hbase建表
         SingleOutputStreamOperator<TableProcessDim> createTableStream = createTable(processStream);
-        // 4.主流数据和广播进行连接处理
+        // 4.主流数据和广播进行连接处理    .(mysql的配置表)配置流中配置信息进行广播
         MapStateDescriptor<String,TableProcessDim> mapDescriptor = new MapStateDescriptor<String,TableProcessDim>("broadcast_state",String.class,TableProcessDim.class);
         BroadcastStream<TableProcessDim> broadcastStream = createTableStream.broadcast(mapDescriptor);
         SingleOutputStreamOperator<Tuple2<JSONObject, TableProcessDim>> processBroadCastStream = etlStream.connect(broadcastStream).process(new DimProcessFunction(mapDescriptor));
@@ -81,23 +83,23 @@ public class DimApp extends BaseApp {
     }
 
     public SingleOutputStreamOperator<JSONObject> etl(DataStreamSource<String> dataStreamSource) {
-        return dataStreamSource.flatMap(new FlatMapFunction<String, JSONObject>() {
+        return dataStreamSource.flatMap(new FlatMapFunction<String, JSONObject>() {//业务处理
             @Override
             public void flatMap(String s, Collector<JSONObject> collector) throws Exception {
                 try {
-                    if (s != null) {
+                    if (s != null) {  //将数据进行转换../.
                         JSONObject jsonObject = JSON.parseObject(s);
                         String db = jsonObject.getString("database");
                         String type = jsonObject.getString("type");
                         String data = jsonObject.getString("data");
-                        if ("gmall".equals(db) &&
-                                ("insert".equals(type)) ||
-                                "update".equals(type) ||
-                                "delete".equals(type) ||
-                                "bootstrap-insert".equals(type) &&
-                               data != null &&
-                               data.length() > 2) {
-                            collector.collect(jsonObject);
+                        if ("gmall".equals(db) &&//拆分数据
+                           ("insert".equals(type)) ||
+                           "update".equals(type) ||
+                           "delete".equals(type) ||
+                           "bootstrap-insert".equals(type) &&
+                           data != null &&
+                           data.length() > 2) {
+                           collector.collect(jsonObject);
                         }
                     }
                 } catch (Exception e) {
@@ -118,19 +120,19 @@ public class DimApp extends BaseApp {
                 // 连接Hbase -->ctrl+alt+f
                 hbaseConnect = HbaseUtil.getHbaseConnect();
             }
-
             @Override
             public void close() throws Exception {
                 // 关闭连接
                 hbaseConnect.close();
             }
-
             @Override
             public void flatMap(String s, Collector<TableProcessDim> collector) throws Exception {
                 // 处理逻辑
+                //获取配置表进行的操作类型
                 JSONObject jsonObject = JSON.parseObject(s);
                 String op = jsonObject.getString("op");
                 System.out.println(op);
+                //获取HBASE中维度标的表明
                 if ("r".equals(op) || "c".equals(op)) {
                     tableProcessDim = jsonObject.getObject("after", TableProcessDim.class);
                     String[] split = tableProcessDim.getSinkFamily().split(",");
@@ -138,19 +140,18 @@ public class DimApp extends BaseApp {
                     createTable(split);
                 } else if ("d".equals(op)) {
                     tableProcessDim = jsonObject.getObject("before", TableProcessDim.class);
-                    // 删除表
+                    // 在配置表中删除一个条数据在HBASE中也删除
                     deleteTable();
                 } else if ("u".equals(op)) {
                     tableProcessDim = jsonObject.getObject("after", TableProcessDim.class);
                     String[] split = tableProcessDim.getSinkFamily().split(",");
-                    // 先删除后建
+                    // // u进行修改 应该先删除表,再建表. 表的历史数据需要重新同步
                     deleteTable();
                     createTable(split);
                 }
                 tableProcessDim.setOp(op);
                 collector.collect(tableProcessDim);
             }
-
             public void createTable(String[] families) {
                 try {
                     System.out.println("tableProcessDim.getSinkTable() = " + tableProcessDim.getSinkTable());
@@ -159,7 +160,6 @@ public class DimApp extends BaseApp {
                     e.printStackTrace();
                 }
             }
-
             public void deleteTable() {
                 System.out.println("tableProcessDim.getSinkTable() = " + tableProcessDim.getSinkTable());
                 try {

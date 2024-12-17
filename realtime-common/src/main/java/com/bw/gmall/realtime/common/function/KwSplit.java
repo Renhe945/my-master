@@ -7,7 +7,7 @@ import org.apache.flink.table.functions.TableFunction;
 import org.apache.flink.types.Row;
 
 import java.util.Set;
-
+//分词工具类的自定义UDTF函数
 @FunctionHint(output = @DataTypeHint("row<keyword string>"))
 public class KwSplit extends TableFunction<Row> {
     public void eval(String kw) {

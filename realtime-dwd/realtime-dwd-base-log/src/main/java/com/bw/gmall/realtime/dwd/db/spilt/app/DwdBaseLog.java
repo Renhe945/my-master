@@ -34,50 +34,53 @@ public class DwdBaseLog extends BaseApp {
     }
     @Override
     public void handle(StreamExecutionEnvironment env, DataStreamSource<String> dataStreamSource) {
-//        1.ETL清洗数据
+        //1.ETL清洗数据
         SingleOutputStreamOperator<JSONObject>  etlStream= etl(dataStreamSource);
-//        2.添加水位线keyby
+        //2.添加水位线keyby
         KeyedStream<JSONObject, String> keyedStream = getKeyedStream(etlStream);
-//        3.新老用户校验
+        //3.新老用户校验
         SingleOutputStreamOperator<JSONObject> isNewStream = fixlsNew(keyedStream);
-//        isNewStream.print();
-//        4.分流
+        isNewStream.print("新老用户------------------------的------------------------校验");
+        //4.分流
         OutputTag<String> startTag = new OutputTag<String>("start", TypeInformation.of(String.class));
         OutputTag<String> errorTag = new OutputTag<String>("err", TypeInformation.of(String.class));
         OutputTag<String> displayTag = new OutputTag<String>("display", TypeInformation.of(String.class));
         OutputTag<String> actionTag = new OutputTag<String>("action", TypeInformation.of(String.class));
         SingleOutputStreamOperator<String> splitStream = getSplitStream(isNewStream, startTag, errorTag, displayTag, actionTag);
-//        5.写入到kafka
+        //5.写入到kafka
         SideOutputDataStream<String> startStream = splitStream.getSideOutput(startTag);
         SideOutputDataStream<String> errorStream = splitStream.getSideOutput(errorTag);
         SideOutputDataStream<String> displayStream = splitStream.getSideOutput(displayTag);
         SideOutputDataStream<String> actionStream = splitStream.getSideOutput(actionTag);
-
+        //发送到kafka
         startStream.sinkTo(FlinkSinkUtil.getKafkaSink(Constant.TOPIC_DWD_TRAFFIC_START));
         errorStream.sinkTo(FlinkSinkUtil.getKafkaSink(Constant.TOPIC_DWD_TRAFFIC_ERR));
         displayStream.sinkTo(FlinkSinkUtil.getKafkaSink(Constant.TOPIC_DWD_TRAFFIC_DISPLAY));
         actionStream.sinkTo(FlinkSinkUtil.getKafkaSink(Constant.TOPIC_DWD_TRAFFIC_ACTION));
         splitStream.sinkTo(FlinkSinkUtil.getKafkaSink(Constant.TOPIC_DWD_TRAFFIC_PAGE));
     }
-
-    private SingleOutputStreamOperator<String> getSplitStream(SingleOutputStreamOperator<JSONObject> isNewStream, OutputTag<String> startTag, OutputTag<String> errorTag, OutputTag<String> displayTag, OutputTag<String> actionTag) {
+    private SingleOutputStreamOperator<String> getSplitStream(SingleOutputStreamOperator<JSONObject> isNewStream, OutputTag<String> startTag,
+//    OutputTag<String> pageTag,
+    OutputTag<String> errorTag, OutputTag<String> displayTag, OutputTag<String> actionTag) {
         return isNewStream.process(new ProcessFunction<JSONObject, String>() {
             @Override
-            public void processElement(JSONObject jsonObject, ProcessFunction<JSONObject, String>.Context context, Collector<String> collector) throws Exception {
-                JSONObject err=jsonObject.getJSONObject("err");
-                if(err!=null){
-                    context.output(errorTag,jsonObject.toJSONString());
-                    jsonObject.remove("err");
-                }
-
-                JSONObject start = jsonObject.getJSONObject("start");
-                JSONObject page = jsonObject.getJSONObject("page");
+            public void processElement(
+                    JSONObject jsonObject,
+                    ProcessFunction<JSONObject, String>.Context context,
+                    Collector<String> collector
+            ) throws Exception {
                 JSONObject common = jsonObject.getJSONObject("common");
                 Long ts = jsonObject.getLong("ts");
+                // 1. 启动
+                JSONObject start = jsonObject.getJSONObject("start");
                 if(start!=null){
                     context.output(startTag,jsonObject.toJSONString());
                     jsonObject.remove("start");
-                }else if(page!=null){
+                }
+                // 5. 页面
+                JSONObject page = jsonObject.getJSONObject("page");
+                if(page!=null){
+                    // 2. 曝光
                     JSONArray displays = jsonObject.getJSONArray("displays");
                     if(displays!=null){
                         for (int i = 0; i < displays.size(); i++) {
@@ -89,6 +92,7 @@ public class DwdBaseLog extends BaseApp {
                         }
                         jsonObject.remove("displays");
                     }
+//                   // 3. 活动
                     JSONArray actions = jsonObject.getJSONArray("actions");
                     if(actions!=null){
                         for (int i = 0; i < actions.size(); i++) {
@@ -101,6 +105,12 @@ public class DwdBaseLog extends BaseApp {
                         jsonObject.remove("actions");
                     }
                     collector.collect(jsonObject.toJSONString());
+                }
+                // 4. err
+                JSONObject err=jsonObject.getJSONObject("err");
+                if(err!=null){
+                    context.output(errorTag,jsonObject.toJSONString());
+                    jsonObject.remove("err");
                 }
             }
         });
@@ -137,9 +147,7 @@ public class DwdBaseLog extends BaseApp {
                 return jsonObject;
             }
         });
-
         return isNewStream;
-
     }
 
     private KeyedStream<JSONObject, String> getKeyedStream(SingleOutputStreamOperator<JSONObject> etlStream) {
@@ -155,9 +163,6 @@ public class DwdBaseLog extends BaseApp {
             }
         });
     }
-
-
-
     private SingleOutputStreamOperator<JSONObject> etl(DataStreamSource<String> dataStreamSource) {
         return dataStreamSource.flatMap(new FlatMapFunction<String, JSONObject>() {
             @Override

@@ -65,8 +65,7 @@ public class DwsTradeSkuOrderWindowAsync extends BaseApp {
     private void writeToDoris(SingleOutputStreamOperator<TradeSkuOrderBean> stream) {
 
         stream.map(new DorisMapFunction<>())
-                .print();
-//                .sinkTo(FlinkSinkUtil.getDorisSink(Constant.DWS_TRADE_SKU_ORDER_WINDOW));
+               .sinkTo(FlinkSinkUtil.getDorisSink(Constant.DWS_TRADE_SKU_ORDER_WINDOW));
 
     }
 

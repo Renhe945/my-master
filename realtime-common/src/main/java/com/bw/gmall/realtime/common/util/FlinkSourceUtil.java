@@ -17,9 +17,9 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.util.Properties;
-
+//关于Source的工具类
 public class FlinkSourceUtil {
-
+//    获取Kafka
     /**
      * @param topic   主题
      * @param groupId 消费者组ID
@@ -56,7 +56,7 @@ public class FlinkSourceUtil {
 
     /**
      * 读取CDC
-     *
+     *获取MySQLSource
      * @param processDataBase
      * @param processDimTableName
      * @return
@@ -70,7 +70,7 @@ public class FlinkSourceUtil {
                 .hostname(Constant.MYSQL_HOST)
                 .port(Constant.MYSQL_PORT)
                 .databaseList(Constant.PROCESS_DATABASE) // monitor all tables under inventory database
-                .username(Constant.DORIS_USERNAME)
+                .username(Constant.MYSQL_USER_NAME)
                 .password(Constant.MYSQL_PASSWORD)
                 .tableList(processDataBase + "." + processDimTableName)
                 .deserializer(new JsonDebeziumDeserializationSchema()) // converts SourceRecord to String

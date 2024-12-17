@@ -15,15 +15,23 @@ public class DwsTrafficSourceKeywordPageViewWindow extends BaseSqlApp {
 
     @Override
     public void handle(StreamExecutionEnvironment env, StreamTableEnvironment tableEnv, String groupId) {
-        // 1. 读取 页面日志
+        /**从页面日志事实表中读取数据 创建动态表 并指定Watermark的生成策略以及提取事件时间字段
+         * 1. 读取 页面日志
+        */
         tableEnv.executeSql("create table page_log(" +
-                " page map<string, string>, " +
+                "common map<string,string>, "+
+                " page map<string, string>,  " +
                 " ts bigint, " +
                 " et as to_timestamp_ltz(ts, 3), " +
                 " watermark for et as et - interval '5' second " +
-                ")" + SQLUtil.getKafkaSourceSQL(Constant.TOPIC_DWD_TRAFFIC_PAGE,"1"));
+                ")" +
+                SQLUtil.getKafkaSourceSQL(Constant.TOPIC_DWD_TRAFFIC_PAGE,"dws_traffic_source_keyword_page_view_window"));
+//        tableEnv.executeSql("select * from page_log").print();
+        //注册自定义函数到表执行环境中
+        //从贞面日志事实表中读取数据 创建动态表 并指定Watermark的生成策略以及提取事件时间字段
 
-        // 2. 读取搜索关键词
+
+        // 过滤出搜索行为
         Table kwTable = tableEnv.sqlQuery("select " +
                 "page['item'] kw, " +
                 "et " +
@@ -36,10 +44,12 @@ public class DwsTrafficSourceKeywordPageViewWindow extends BaseSqlApp {
         tableEnv.createTemporaryView("kw_table", kwTable);
 //        kwTable.execute().print();
 
+
+        //调用自定义函数充成分词
         // 3. 自定义分词函数
         tableEnv.createTemporaryFunction("kw_split", KwSplit.class);
 
-
+        // 2. 读取搜索关键词
         Table keywordTable = tableEnv.sqlQuery("select " +
                 " keyword, " +
                 " et " +
@@ -48,7 +58,8 @@ public class DwsTrafficSourceKeywordPageViewWindow extends BaseSqlApp {
         tableEnv.createTemporaryView("keyword_table", keywordTable);
 //        keywordTable.execute().print();
 
-
+        //并和原表的其它字段进行join
+        //分组、开窗、粜合
         // 3. 开窗聚和
         Table result = tableEnv.sqlQuery("select " +
                 " date_format(window_start, 'yyyy-MM-dd HH:mm:ss') stt, " +
@@ -60,6 +71,8 @@ public class DwsTrafficSourceKeywordPageViewWindow extends BaseSqlApp {
                 "group by window_start, window_end, keyword ");
 //        result.execute().print();
         // 5. 写出到 doris 中
+        //将察合的结果写到Doris中
+
         tableEnv.executeSql("create table dws_traffic_source_keyword_page_view_window(" +
                 "  stt string, " +  // 2023-07-11 14:14:14
                 "  edt string, " +

@@ -8,7 +8,7 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.util.HashSet;
 import java.util.Set;
-
+//过滤搜索词
 public class IkUtil {
      public static Set<String> split(String s) {
         Set<String> result = new HashSet<>();
@@ -17,8 +17,7 @@ public class IkUtil {
         Reader reader = new StringReader(s);
         // 智能分词
         // max_word
-        IKSegmenter ikSegmenter = new IKSegmenter(reader, true);
-
+        IKSegmenter ikSegmenter = new IKSegmenter(reader,true);
         try {
             Lexeme next = ikSegmenter.next();
             while (next != null) {
@@ -26,13 +25,13 @@ public class IkUtil {
                 result.add(word);
                 next = ikSegmenter.next();
             }
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
         return result;
     }
 
+    public static void main(String[] args) {
+        System.out.println(split("小米手机京东自营5g移动联通电信"));
+    }
 }
