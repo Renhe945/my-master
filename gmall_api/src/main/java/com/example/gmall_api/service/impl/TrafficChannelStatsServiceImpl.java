@@ -13,7 +13,7 @@ import java.util.List;
 public class TrafficChannelStatsServiceImpl implements TrafficChannelStatsService {
 
     // 自动装载 Mapper 接口实现类
-//    @Autowired
+    @Autowired
     TrafficChannelStatsMapper trafficChannelStatsMapper;
 
     // 1. 获取各渠道独立访客数

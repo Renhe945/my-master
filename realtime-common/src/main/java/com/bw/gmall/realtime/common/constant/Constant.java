@@ -18,7 +18,7 @@ public class  Constant {
     public static final String HBASE_ZOOKEEPER_QUORUM = "hadoop102,hadoop103,hadoop104";
 
 //    public static final String MYSQL_DRIVER = "com.mysql.jdbc.Driver";
-public static final String MYSQL_DRIVER = "com.mysql.cj.jdbc.Driver";
+    public static final String MYSQL_DRIVER = "com.mysql.cj.jdbc.Driver";
     public static final String MYSQL_URL = "jdbc:mysql://hadoop102:3306?useSSL=false";
 
     public static final String TOPIC_DWD_TRAFFIC_START = "dwd_traffic_start";

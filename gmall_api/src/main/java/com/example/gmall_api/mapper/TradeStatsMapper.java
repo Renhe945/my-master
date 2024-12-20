@@ -11,6 +11,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 public interface TradeStatsMapper {
+
     // 交易总金额
     @Select("select sum(order_amount) order_total_amount\n" +
             "from dws_trade_province_order_window\n" +

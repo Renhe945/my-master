@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public class TradeStatsServiceImpl implements TradeStatsService {
 
-//    @Autowired
+    @Autowired
     TradeStatsMapper tradeStatsMapper;
 
     @Override

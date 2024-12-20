@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 
-@RequestMapping("/gmall/realtime/trade")
+//@RequestMapping("/gmall/realtime/trade")
+@RequestMapping("/gmall/realtime/traffic")
 @RestController
 public class TrafficController {
 

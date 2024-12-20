@@ -7,7 +7,6 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
-
 public interface TrafficChannelStatsMapper {
 
     // 1. 获取各渠道独立访客数
