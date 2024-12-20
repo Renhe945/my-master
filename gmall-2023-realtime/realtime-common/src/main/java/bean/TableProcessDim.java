@@ -1,4 +1,4 @@
-package com.atguigu.gamll.realtime.common.bean;
+package bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
