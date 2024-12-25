@@ -1,0 +1,23 @@
+#env
+env=prod
+# MySQL
+mysql.host=cdh03
+mysql.port=3306
+mysql.url=jdbc:mysql://cdh03:3306?useSSL=false&characterEncoding=UTF-8
+mysql.timezone=Asia/Shanghai
+mysql.database=gmall
+mysql.databases.conf=gmall2023_config
+mysql.user=root
+mysql.pwd=root
+# Zookeeper Server
+zookeeper.server.host.list=cdh03
+# Hbase
+hbase.namespace=gmall
+
+
+
+
+# kafka cdh
+# kafka.bootstrap.servers=${Kafka.bootstrap.servers}
+# REALTIME.KAFKA.LOG.TOPIC=${REALTIME.KAFKA.LOG.TOPIC}
+# kafka.topic.db=topic_log

@@ -5,15 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5bc9401f-d20f-4f23-b5e5-818baa5e278c" name="更改" comment="new">
-      <change afterPath="$PROJECT_DIR$/kh.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lx.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a1/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/lx.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a1/a1.ipynb" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdh01/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdh01/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdh01/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdh01/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdh01/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdh01/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdh01/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdh01/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdh01/common/dependency-reduced-pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdh01/common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdh01/common/src/main/java/a2/Flinkmysql_KafkaProducer1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdh01/func/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdh01/func/src/main/java/aa/Cdh_01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cdh01/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -44,6 +60,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -69,12 +88,14 @@
     &quot;Python.demo1.executor&quot;: &quot;Run&quot;,
     &quot;Python.lx.executor&quot;: &quot;Run&quot;,
     &quot;Python.yk1.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/python代码&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/mygit/my-master&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -100,11 +121,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\mygit\my-master" />
       <recent name="E:\python代码\lx-yk\data-yk\yk6" />
       <recent name="E:\python代码\lx-yk\data-yk\yk5" />
       <recent name="E:\python代码\lx-yk\data-yk\yk3" />
       <recent name="E:\python代码\lx-yk\data-yk\yk1" />
-      <recent name="E:\python代码\lx-yk\data-yk\yk2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\python代码\a1" />
@@ -138,7 +159,6 @@
   <component name="RunManager" selected="Python.lx">
     <configuration name="a1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python代码" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -161,7 +181,6 @@
     </configuration>
     <configuration name="a2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python代码" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -184,7 +203,6 @@
     </configuration>
     <configuration name="demo1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python代码" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -207,7 +225,6 @@
     </configuration>
     <configuration name="lx" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python代码" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -230,7 +247,6 @@
     </configuration>
     <configuration name="yk1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python代码" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -358,6 +374,11 @@
       <workItem from="1729649726461" duration="911000" />
       <workItem from="1731486191998" duration="45000" />
       <workItem from="1731486237988" duration="591000" />
+      <workItem from="1734699282985" duration="100000" />
+      <workItem from="1734699436528" duration="71000" />
+      <workItem from="1734699518384" duration="1951000" />
+      <workItem from="1734741302990" duration="1249000" />
+      <workItem from="1734846860458" duration="541000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <option name="closed" value="true" />
@@ -432,14 +453,14 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/python$a1.coverage" NAME="a1 覆盖结果" MODIFIED="1727593868219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lx-yk/data-yk/yk1" />
-    <SUITE FILE_PATH="coverage/python$yk1.coverage" NAME="yk1 覆盖结果" MODIFIED="1727357831823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lx-yk" />
-    <SUITE FILE_PATH="coverage/python$a3.coverage" NAME="a3 覆盖结果" MODIFIED="1726101636470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python1" />
-    <SUITE FILE_PATH="coverage/python$demo1.coverage" NAME="demo1 覆盖结果" MODIFIED="1727426802245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Temp" />
-    <SUITE FILE_PATH="coverage/python$c1.coverage" NAME="c1 覆盖结果" MODIFIED="1726194757966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rk1/t1" />
     <SUITE FILE_PATH="coverage/python$a1__1_.coverage" NAME="a1 (1) 覆盖结果" MODIFIED="1727353726273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lxrk" />
-    <SUITE FILE_PATH="coverage/python$aa.coverage" NAME="aa 覆盖结果" MODIFIED="1726185225543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rk1/t1" />
-    <SUITE FILE_PATH="coverage/python$a2.coverage" NAME="a2 覆盖结果" MODIFIED="1727592434525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lx-yk/data-yk/yk1" />
     <SUITE FILE_PATH="coverage/python$lx.coverage" NAME="lx 覆盖结果" MODIFIED="1731486608761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$aa.coverage" NAME="aa 覆盖结果" MODIFIED="1726185225543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rk1/t1" />
+    <SUITE FILE_PATH="coverage/python$yk1.coverage" NAME="yk1 覆盖结果" MODIFIED="1727357831823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lx-yk" />
+    <SUITE FILE_PATH="coverage/python$a2.coverage" NAME="a2 覆盖结果" MODIFIED="1727592434525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lx-yk/data-yk/yk1" />
+    <SUITE FILE_PATH="coverage/python$c1.coverage" NAME="c1 覆盖结果" MODIFIED="1726194757966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rk1/t1" />
+    <SUITE FILE_PATH="coverage/python$demo1.coverage" NAME="demo1 覆盖结果" MODIFIED="1727426802245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Temp" />
+    <SUITE FILE_PATH="coverage/python$a3.coverage" NAME="a3 覆盖结果" MODIFIED="1726101636470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python1" />
+    <SUITE FILE_PATH="coverage/python$a1.coverage" NAME="a1 覆盖结果" MODIFIED="1727593868219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lx-yk/data-yk/yk1" />
   </component>
 </project>
