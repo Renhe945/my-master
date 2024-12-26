@@ -1,11 +1,4 @@
-### Flink 1.17 流处理模版
-
->   Version
->
->   JDK Oracle8
->
->   Flink 1.17.1
-> 
->   Flink CDC 2.4.0
-> 
-> Platform CDH 6.3.2
+### 
+业务数据的优化：
+先读取mysql的数据再将其发送到kafka的业务主题中；在使用kafka读取出来做广播分流中的主流
+然后再进行下一步
