@@ -13,7 +13,6 @@ import com.ververica.cdc.debezium.JsonDebeziumDeserializationSchema;
  * 读取sql数据
  */
 public class CdcSourceUtils_mysql {
-
     public static MySqlSource<String> getMySQLCdcSource(String database,String table,String username,String pwd,StartupOptions model){
         return  MySqlSource.<String>builder()
                 .hostname(ConfigUtils.getString("mysql.host"))
@@ -27,8 +26,12 @@ public class CdcSourceUtils_mysql {
                 .startupOptions(model)
                 .includeSchemaChanges(true)
                 .build();
+    }
 
-
+    public static void main(String[] args) {
+        MySqlSource<String> mySQLCdcSource = getMySQLCdcSource("cdh01", "", "root", "root", StartupOptions.initial());
+        System.out.println("读取数据-----------=========="+mySQLCdcSource);
+        //com.ververica.cdc.connectors.mysql.source.MySqlSource@337d0578
 
     }
 }

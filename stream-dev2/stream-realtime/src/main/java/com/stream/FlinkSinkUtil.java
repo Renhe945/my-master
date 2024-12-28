@@ -15,9 +15,9 @@ public class FlinkSinkUtil {
         KafkaSink<String> kafkaSink = KafkaSink.<String>builder()
                 .setBootstrapServers("cdh01:9092,cdh02:9092，cdh03:9092")
                 .setRecordSerializer(KafkaRecordSerializationSchema.builder()
-                        .setTopic(topic)
-                        .setValueSerializationSchema(new SimpleStringSchema())
-                        .build())
+                .setTopic(topic)
+                .setValueSerializationSchema(new SimpleStringSchema())
+                .build())
                 //当前配置决定是否开启事务，保证写到kafka数据的精准一次
                 //.setDeliveryGuarantee(DeliveryGuarantee.EXACTLY_ONCE)
                 //设置事务Id的前缀

@@ -1,4 +1,4 @@
-package com.retailersv1;
+package com.retailersv1.bim;
 
 import com.alibaba.fastjson.JSONObject;
 import com.retailersv1.func.ProcessSplitStream;
@@ -26,7 +26,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 /**
- * @Package com.retailersv1.DbusLogDataProcess2Kafka
+ * @Package com.retailersv1.bim.DbusLogDataProcess2Kafka
  * @Author zhou.han
  * @Date 2024/12/23 14:27
  * @description: Log

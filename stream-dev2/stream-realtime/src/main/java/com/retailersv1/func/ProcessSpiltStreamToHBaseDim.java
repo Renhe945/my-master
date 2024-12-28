@@ -38,7 +38,7 @@ public class ProcessSpiltStreamToHBaseDim extends BroadcastProcessFunction<JSONO
                 ConfigUtils.getString("mysql.url"),
                 ConfigUtils.getString("mysql.user"),
                 ConfigUtils.getString("mysql.pwd"));
-        String querySQL = "select * from gmall2023_config.table_process_dim";
+        String querySQL = "select * from gmall2023_config.table_process_dim";//读取配置表
         List<TableProcessDim> tableProcessDims = JdbcUtils.queryList(connection, querySQL, TableProcessDim.class, true);
         // configMap:spu_info -> TableProcessDim(sourceTable=spu_info, sinkTable=dim_spu_info, sinkColumns=id,spu_name,description,category3_id,tm_id, sinkFamily=info, sinkRowKey=id, op=null)
         for (TableProcessDim tableProcessDim : tableProcessDims ){
@@ -92,7 +92,6 @@ public class ProcessSpiltStreamToHBaseDim extends BroadcastProcessFunction<JSONO
                 broadcastState.remove(sourceTableName);
             }else {
                 broadcastState.put(sourceTableName,jsonObject);
-//                configMap.put(sourceTableName,jsonObject.toJavaObject(TableProcessDim.class));
             }
         }
     }

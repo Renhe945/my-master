@@ -28,7 +28,7 @@ public class StreamTest {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         KafkaSource<String> kafkaSource = KafkaUtils.buildKafkaSource(
                 "cdh01:9092",
-                "realtime_log",
+                "topic_log",
                 new Date().toString(),
                 OffsetsInitializer.earliest());
 

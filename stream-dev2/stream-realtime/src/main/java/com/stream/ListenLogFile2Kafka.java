@@ -18,10 +18,7 @@ public class ListenLogFile2Kafka {
 
 
     public static void main(String[] args) {
-
-        if (Long.parseLong(Objects.requireNonNull(FileUtils.getFileFirstLineData(REALTIME_MSG_POSITION_FILE_PATH)))
-                <
-                FileUtils.getFileLastTime(REALTIME_LOG_FILE_PATH)){
+        if (Long.parseLong(Objects.requireNonNull(FileUtils.getFileFirstLineData(REALTIME_MSG_POSITION_FILE_PATH)))<FileUtils.getFileLastTime(REALTIME_LOG_FILE_PATH)){
             KafkaUtils.sinkJson2KafkaMessage(REALTIME_KAFKA_LOG_TOPIC,FileUtils.readFileData(REALTIME_LOG_FILE_PATH));
             FileUtils.sink2File(REALTIME_MSG_POSITION_FILE_PATH,String.valueOf(FileUtils.getFileLastTime(REALTIME_LOG_FILE_PATH)));
         }else {

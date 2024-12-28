@@ -1,10 +1,11 @@
-package com.retailersv1;
+package com.retailersv1.bim;
 
 import com.alibaba.fastjson.JSONObject;
 import com.retailersv1.func.ProcessSpiltStreamToHBaseDim;
 import com.stream.common.utils.ConfigUtils;
 import com.stream.common.utils.EnvironmentSettingUtils;
 import com.retailersv1.func.MapUpdateHbaseDimTableFunc;
+import com.stream.common.utils.KafkaUtils;
 import com.stream.utils.CdcSourceUtils_mysql;
 import com.ververica.cdc.connectors.mysql.source.MySqlSource;
 import com.ververica.cdc.connectors.mysql.table.StartupOptions;
@@ -21,7 +22,7 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
 
 /**
- * @Package com.retailersv1.DbusCdc2DimHbase
+ * @Package com.retailersv1.bim.DbusCdc2DimHbase
  * @Author zhou.han
  * @Date 2024/12/12 12:56
  * @description: mysql db cdc to kafka realtime_db topic
@@ -89,7 +90,6 @@ public class DbusCdc2DimHbase {
         BroadcastStream<JSONObject> broadcastDs = tpDS.broadcast(mapStageDesc);
         BroadcastConnectedStream<JSONObject, JSONObject> connectDs = cdcDbMainStreamMap.connect(broadcastDs);
         connectDs.process(new ProcessSpiltStreamToHBaseDim(mapStageDesc));
-
 
 
         env.disableOperatorChaining();
