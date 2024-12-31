@@ -24,14 +24,5 @@
 根据配置数据和主流数据构建一个新的JSONObject（记为kafkaData）。kafkaData中包含表名、操作类型和数据内容等信息。
 将构建好的kafkaData放入ArrayList（记为list）中，然后通过KafkaUtils.sinkJson2KafkaMessage方法将list中的数据发送到 Kafka 中对应的主题。主题名由配置数据中的sinkTable指定，确保数据能够准确地发送到目标主题进行后续处理。
 >>> 然后再进行下一步
-> 
-> 
-> 默认的为
-> 交付周期：
-> 金丝雀：
-> 数据链与优化：
-> 优化指标
-> 
-> 
-> 
+
 ![img.png](img.png)
