@@ -1,7 +1,7 @@
 ### dim层的优化:
 > 业务数据：使用flink CDC 将mysql中的数据信息读取出来，在读取mysql的配置文件 并和并他们 然后使用广播流将其分发到hbase中
 > 报错解决是因为没有读取到mysql原始数据，将latest()数据更改为initial()数据并在最后将dim层打包上传进yarn，还有在建表的时候没有给前缀名导致hbase找不到这些表一直报表未存在，其实在hbase中已经存在了，但是未识别到
-> 使用./bin/flink run-application -t yarn-application -c com.retailersv1.bim.DbusCdc2DimHbase /data/stream-realtime-1.0-SNAPSHOT-jar-with-dependencies.jar命令发送然后使用yarn官网查看是否运行成功
+> 使用./bin/flink run-application -t yarn-application -c com.retailersv1.bim.DbusCdc2Dim_write_Hbase /data/stream-realtime-1.0-SNAPSHOT-jar-with-dependencies.jar命令发送然后使用yarn官网查看是否运行成功
 ————————————————————————————————————————————————————————————————————————————————
 > log数据：使用jar日志生成日志数据直接传到 kafka 然后使用kafka将数据读出来并将脏数据过滤出来，并通过用户id分区分成新老用户，并且进行数据的分流，将不同的流分出去并发送到kafka
 > 报错的解决 版本不兼容需要更改 pom 添加版本号
@@ -34,4 +34,4 @@
 > 
 > 
 > 
-![img_1.png](img_1.png)
+![img.png](img.png)

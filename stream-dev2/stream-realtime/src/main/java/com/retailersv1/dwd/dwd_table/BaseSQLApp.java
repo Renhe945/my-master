@@ -33,64 +33,51 @@ public class BaseSQLApp {
     public static void main(String[] args) throws Exception {//StreamTableEnvironment
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         StreamTableEnvironment tEnv = StreamTableEnvironment.create(env);
-        
-//读取 kafka业务数据:3> {"before":null,"after":{"id":7282,"log":"{\"common\":{\"ar\":\"29\",\"ba\":\"Redmi\",\"ch\":\"oppo\",\"is_new\":\"1\",\"md\":\"Redmi k50\",\"mid\":\"mid_100\",\"os\":\"Android 12.0\",\"sid\":\"3970b957-0d62-42ad-b5bf-02b972d52543\",\"vc\":\"v2.1.134\"},\"start\":{\"entry\":\"icon\",\"loading_time\":1169,\"open_ad_id\":14,\"open_ad_ms\":3298,\"open_ad_skip_ms\":59583},\"ts\":1731327462628}"},"source":{"version":"1.9.7.Final","connector":"mysql","name":"mysql_binlog_source","ts_ms":0,"snapshot":"false","db":"gmall","sequence":null,"table":"z_log","server_id":0,"gtid":null,"file":"","pos":0,"row":0,"thread":null,"query":null},"op":"r","ts_ms":1735181202413,"transaction":null}
-//        读取 kafka业务数据:
-        tEnv.executeSql("CREATE TABLE topic_db (\n" +
-                "    `before` STRING,\n" +
-                "    `after` STRING,\n" +
-                "    `source` STRING,\n" +
-                "    `op` STRING,\n" +
-                "    `ts_ms` BIGINT,\n" +
-                "    `transaction` String,\n" +
-                "    `event_time` AS TO_TIMESTAMP_LTZ(ts_ms, 3),  -- 通过计算列将ts_ms转换为带时区的时间戳类型并定义为event_time字段\n" +
-                "    WATERMARK FOR `event_time` AS `event_time` - INTERVAL '5' SECOND  -- 基于event_time字段设置水位线，延迟5秒，可根据实际调整\n" +
-                ") WITH (\n" +
-                "    'connector' = 'kafka',\n" +
-                "    'topic' = '"+CDH_KAFKA_DB+"',\n" +
-                "    'properties.bootstrap.servers' = '"+CDH_KAFAK_SERVER+"',\n" +
-                "    'properties.group.id' = 'testGroup',\n" +
-                "    'scan.startup.mode' = 'earliest-offset',\n" +
-                "    'format' = 'json'\n" +
-                ")");
-        Table table = tEnv.sqlQuery("select * from topic_db");
-        tEnv.toDataStream(table).print();
-//        tEnv.executeSql("SELECT after[`name`] FROM topic_db").print();
-//        before        after                             source                       op     ts_ms           transaction     event_time
-//| +I |  <NULL> | {"id":499,"name":"短外套","... | {"version":"1.9.7.Final","c... |  r |  1735288789530 |   <NULL> | 2024-12-27 16:39:49.530 |
-//| +I |  <NULL> | {"id":500,"name":"风衣","ca... | {"version":"1.9.7.Final","c... |  r |  1735288789530 |   <NULL> | 2024-12-27 16:39:49.530 |
-//| +I |  <NULL> | {"id":497,"name":"正装裤","... | {"version":"1.9.7.Final","c... |  r |  1735288789529 |   <NULL> | 2024-12-27 16:39:49.529 |
-//| +I |  <NULL> | {"id":587,"name":"毛线手套"... | {"version":"1.9.7.Final","c... |  r |  1735288789533 |   <NULL> | 2024-12-27 16:39:49.533 |
-//| +I |  <NULL> | {"id":588,"name":"防晒手套"... | {"version":"1.9.7.Final","c... |  r |  1735288789533 |   <NULL> | 2024-12-27 16:39:49.533 |
-//    tEnv.executeSql("select after from topic_db").print();
-        //读取HBase的base_dic字典表
-        tEnv.executeSql("CREATE TABLE base_dic (\n" +
-                " rowkey STRING,\n" +
-                " info ROW<dic_name STRING>,\n" +
-                " PRIMARY KEY (rowkey) NOT ENFORCED\n" +
-                ") WITH (\n" +
-                " 'connector' = 'hbase-2.2',\n" +
-                " 'table-name' = 'gmall:dim_base_dic',\n" +
-                " 'zookeeper.quorum' = '"+ CDH_ZOOKEEPER_SERVER+"'\n" +
-                ")");
-        tEnv.executeSql("select * from base_dic").print();
+        flink_kafka(tEnv);
 
-
-
-
-
-
-
-
-//       创建2.读取hbase数据
-
-
-
-
-        env.execute();
+//        env.execute();
     }
+    private static void flink_kafka(StreamTableEnvironment tEnv) {
+        //读取kafka的数据封装为flinksql表
+        tEnv.executeSql("CREATE TABLE topic_db (\n" +
+                "  `after` map<string,string>,\n" +
+                "  `source` map<string,string>,\n" +
+                "  `op` string ,\n" +
+                "   `ts_ms` bigint,\n" +
+                "  times AS TO_TIMESTAMP(FROM_UNIXTIME(ts_ms/1000))," +
+                " WATERMARK FOR times AS times - INTERVAL '0' SECOND " +
+                ") WITH (\n" +
+                "  'connector' = 'kafka',\n" +
+                "  'topic' = '"+ CDH_KAFKA_DB +"',\n" +
+                "  'properties.bootstrap.servers' = '"+ CDH_KAFAK_SERVER +"',\n" +
+                "  'properties.group.id' = 'testGroup',\n" +
+                "  'scan.startup.mode' = 'earliest-offset',\n" +
+                "  'format' = 'json'\n" +
+                ")");
+//        tEnv.executeSql("select * from topic_db").print();
+//        //读取kafka的数据
+//        tEnv.sqlQuery(" select after['id'] id," +
+//                "after['user_id'] user_id," +
+//                "after['sku_id'] sku_id," +
+//                "TO_TIMESTAMP(FROM_UNIXTIME(CAST(after['create_time'] AS BIGINT)/1000)) create_time "+
+//                "from topic_db where " +
+//                "source['table']='favor_info' " +
+//                "").execute().print();
+    }
+    private static void flink_hbase(StreamTableEnvironment tEnv) {
+        //读取HBase的base_dic字典表//创建2.读取hbase数据
+        tEnv.executeSql("CREATE TABLE base_dic (\n" +
+                "    rowkey STRING,\n" +
+                "    info ROW<dic_name STRING>,\n" +
+                "    PRIMARY KEY (rowkey) NOT ENFORCED\n" +
+                ") WITH (\n" +
+                "    'connector' = 'hbase-2.2',\n" +
+                "    'table-name' = 'gmall:dim_base_dic',\n" +
+                "    'zookeeper.quorum' = '"+CDH_ZOOKEEPER_SERVER+"'\n" +
+                ")");
+//        tEnv.executeSql("select * from base_dic").print();
 
-
+    }
 
 
 

@@ -26,12 +26,12 @@ import java.util.Date;
 import java.util.HashMap;
 
 /**
- * @Package com.retailersv1.bim.DbusLogDataProcess2Kafka
+ * @Package com.retailersv1.bim.DbusLog_write_Kafka
  * @Author zhou.han
  * @Date 2024/12/23 14:27
  * @description: Log
  */
-public class DbusLogDataProcess2Kafka {
+public class DbusLog_write_Kafka {
 
     private static final String kafka_topic_base_log_data = ConfigUtils.getString("kafka.topic.log");
     private static final String kafka_botstrap_servers = ConfigUtils.getString("kafka.bootstrap.servers");

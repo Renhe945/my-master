@@ -5,10 +5,10 @@ import com.retailersv1.func.ProcessSpiltStreamToHBaseDim;
 import com.stream.common.utils.ConfigUtils;
 import com.stream.common.utils.EnvironmentSettingUtils;
 import com.retailersv1.func.MapUpdateHbaseDimTableFunc;
-import com.stream.common.utils.KafkaUtils;
 import com.stream.utils.CdcSourceUtils_mysql;
 import com.ververica.cdc.connectors.mysql.source.MySqlSource;
 import com.ververica.cdc.connectors.mysql.table.StartupOptions;
+
 import lombok.SneakyThrows;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.state.MapStateDescriptor;
@@ -22,12 +22,12 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
 
 /**
- * @Package com.retailersv1.bim.DbusCdc2DimHbase
+ * @Package com.retailersv1.bim.DbusCdc2Dim_write_Hbase
  * @Author zhou.han
  * @Date 2024/12/12 12:56
  * @description: mysql db cdc to kafka realtime_db topic
  */
-public class DbusCdc2DimHbase {
+public class DbusCdc2Dim_write_Hbase {
 
     private static final String CDH_ZOOKEEPER_SERVER = ConfigUtils.getString("zookeeper.server.host.list");
     private static final String CDH_HBASE_NAME_SPACE = ConfigUtils.getString("hbase.namespace");
@@ -45,7 +45,7 @@ public class DbusCdc2DimHbase {
         );
 
         MySqlSource<String> mySQLCdcDimConfSource = CdcSourceUtils_mysql.getMySQLCdcSource(
-                ConfigUtils.getString("mysql.databases.conf"),
+                ConfigUtils.getString("mysql.databases.conf"),//定义了一个mysql的读取配置表
                 "gmall2023_config.table_process_dim",
                 ConfigUtils.getString("mysql.user"),
                 ConfigUtils.getString("mysql.pwd"),
@@ -86,9 +86,10 @@ public class DbusCdc2DimHbase {
 
 
 
-        MapStateDescriptor<String, JSONObject> mapStageDesc = new MapStateDescriptor<>("mapStageDesc", String.class, JSONObject.class);
+        MapStateDescriptor<String, JSONObject> mapStageDesc = new MapStateDescriptor<>("mapStageDesc", String.class, JSONObject.class);//广播流的名称
         BroadcastStream<JSONObject> broadcastDs = tpDS.broadcast(mapStageDesc);
         BroadcastConnectedStream<JSONObject, JSONObject> connectDs = cdcDbMainStreamMap.connect(broadcastDs);
+        //发送到hbase中
         connectDs.process(new ProcessSpiltStreamToHBaseDim(mapStageDesc));
 
 

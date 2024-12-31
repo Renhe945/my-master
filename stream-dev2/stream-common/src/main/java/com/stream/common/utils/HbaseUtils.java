@@ -66,7 +66,7 @@ public class HbaseUtils {
     }
 
     public boolean createTable(String nameSpace,String tableName, String... columnFamily) throws Exception {
-        boolean b = tableIsExists(tableName);
+        boolean b = tableIsExists(nameSpace+":"+tableName);
         if (b) {
             return true;
         }
@@ -201,7 +201,7 @@ public class HbaseUtils {
     @SneakyThrows
     public static void main(String[] args) {
         HbaseUtils hbaseUtils = new HbaseUtils("cdh01,cdh02,cdh03");
-//        hbaseUtils.dropHbaseNameSpace("realtime_v2");
-        System.err.println(hbaseUtils.tableIsExists("realtime_v2:dim_user_info"));
+        hbaseUtils.dropHbaseNameSpace("gmall");
+//        System.err.println(hbaseUtils.tableIsExists("realtime_v2:dim_user_info"));
     }
 }

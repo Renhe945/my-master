@@ -77,6 +77,18 @@
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-hbase_2.11</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>3.0.0</version> <!-- 请根据你自己的环境选择合适的版本 -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-hbase-2.2</artifactId>
+            <version>1.17.2</version>
+<!--            <version>1.13.0</version>-->
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -98,8 +110,8 @@
         <dependency>
             <groupId>org.apache.hbase</groupId>
             <artifactId>hbase-client</artifactId>
-<!--            <version>2.4.7</version>-->
-            <version>2.2.3</version>
+            <version>2.4.7</version>
+<!--            <version>2.2.3</version>-->
         </dependency>
 
     </dependencies>
